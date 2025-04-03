@@ -125,7 +125,7 @@ exports.fetchMessages = async (req, res) => {
         const response = await fetch("https://web2.temp-mail.org/messages", {
             method: 'GET',
             headers: { 
-                "Authorization": ${emailObj.token},
+                "Authorization": emailObj.token,
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             }
