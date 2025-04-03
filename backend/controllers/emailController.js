@@ -61,9 +61,7 @@ exports.generateEmail = async (req, res) => {
 
         if (randomEmail.length > 0) {
             res.status(200).json({
-                message: 'Email retrieved from database',
                 email: randomEmail[0].email,
-                token: randomEmail[0].token,
                 source: 'database'
             });
         } else {
