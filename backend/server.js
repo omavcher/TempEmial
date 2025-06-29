@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const axios = require('axios');
 const userRoutes = require('./routes/userRoutes');
 const emailRoutes = require('./routes/emailRoutes');
 const aiRoutes = require('./routes/aiRoutes');
@@ -36,4 +37,22 @@ mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .catch(err => console.log('❌ MongoDB Connection Error:', err));
 
 const PORT = process.env.PORT || 5000;
+
+// Website reload configuration
+const url = `https://tempemial.onrender.com`;
+const interval = 30000;
+
+function reloadWebsite() {
+  axios
+    .get(url)
+    .then((response) => {
+      console.log("website reloaded");
+    })
+    .catch((error) => {
+      console.error(`Error: ${error.message}`);
+    });
+}
+
+setInterval(reloadWebsite, interval);
+
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

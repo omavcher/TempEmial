@@ -15,7 +15,7 @@
     "@gradio/client": "^1.13.1",
     "@remotion/bundler": "^4.0.279",
     "assemblyai": "^4.9.0",
-    "axios": "^1.8.3",
+    "axios": "^1.10.0",
     "bcryptjs": "^3.0.2",
     "cloudinary": "^2.6.0",
     "cors": "^2.8.5",
